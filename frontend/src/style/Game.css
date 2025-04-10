@@ -1,0 +1,360 @@
+.game-container {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.85);
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 10px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    max-width: 1000px;
+    width: 90%;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.game-title {
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Share-TechMono', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.game-instructions,
+.game-message {
+    color: lightgrey;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 20px
+}
+
+.game-attempts {
+    color: #00ff00;
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 1rem;
+}
+
+.game-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    position: relative;
+    min-height: 100px;
+}
+
+.game-input {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: 'Share-TechMono', monospace;
+    width: clamp(200px, 50vw, 300px);
+    height: 50px;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.game-button {
+    background: rgb(46, 45, 45);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Share-TechMono', monospace;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    white-space: nowrap;
+}
+
+.game-won {
+    text-align: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.game-won-title {
+    color: #00ff00;
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.game-won-code {
+    background: rgba(0, 255, 0, 0.1);
+    padding: clamp(0.5rem, 2vw, 1rem);
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+    margin: 1rem 0;
+}
+
+.game-won-code strong {
+    color: #00ff00;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    letter-spacing: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .game-container {
+        width: 95%;
+    }
+
+    .game-form {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .game-input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .game-button {
+        padding: 0.75rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .game-form {
+        gap: 1rem;
+    }
+
+    .game-input {
+        max-width: 250px;
+    }
+
+    .game-button {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .game-won {
+        padding: 1rem;
+    }
+}
+
+.flicker-effect {
+    animation: flicker 3s linear 1 forwards;
+
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+
+    10% {
+        opacity: 0.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    20% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    30% {
+        opacity: 0.7;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    40% {
+        opacity: 0.9;
+        text-shadow: none;
+    }
+
+    50% {
+        opacity: 0.5;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    60% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    70% {
+        opacity: 0.7;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    80% {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+
+    90% {
+        opacity: 0.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    /* Stato finale (opaco) */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .game-container {
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+
+/* 404 Page Specific Styles */
+.game-image {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.game-image img {
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.game-image img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.5));
+}
+
+/** CSS glitch per tutti i bottoni */
+.glitch,
+.glitch::after {
+    padding: 10px 50px;
+    font-size: 20px;
+
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    position: relative;
+}
+
+.glitch::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+}
+
+.glitch:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px lime, 3px 3px 0px #E94BE8;
+    background-color: transparent;
+    border: 3px solid lime;
+}
+
+.glitch:hover {
+    text-shadow: -1px -1px 0px lime, 1px 1px 0px #E94BE8;
+}
+
+.glitch:hover {
+    background-color: transparent;
+    border: 1px solid lime;
+    box-shadow: 0px 10px 10px -10px lime;
+}
+
+@keyframes glitch_4011 {
+    0% {
+        clip-path: var(--move1);
+        transform: translate(0px, -10px);
+    }
+
+    10% {
+        clip-path: var(--move2);
+        transform: translate(-10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--move3);
+        transform: translate(10px, 0px);
+    }
+
+    30% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    40% {
+        clip-path: var(--move5);
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        clip-path: var(--move6);
+        transform: translate(-10px, 10px);
+    }
+
+    60% {
+        clip-path: var(--move1);
+        transform: translate(10px, -10px);
+    }
+
+    70% {
+        clip-path: var(--move3);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--move2);
+        transform: translate(10px, -10px);
+    }
+
+    90% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    100% {
+        clip-path: var(--move1);
+        transform: translate(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .game-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+    }
+
+    .game-button {
+        position: static !important;
+        /* Override inline styles */
+        margin-top: 20px;
+        transform: none !important;
+        /* Prevent any transformations */
+        transition: none !important;
+        /* Disable transitions */
+    }
+
+    .game-input {
+        width: 80%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,138 @@
+/* Popup di Benvenuto */
+
+.popup-overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+
+}
+
+.popup {
+  width: 500px;
+  height: 400px;
+  background-color: rgb(17, 1, 1);
+  border-radius: 10px;
+  border: 2px solid lime;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-image: url(../Morpheus-1024x642.jpg);
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  position: relative;
+
+}
+
+.popup h4 {
+  margin: 5px 60px 200px 80px;
+  padding-bottom: 100px;
+  color: lime;
+}
+
+
+.popup p {
+  /* margin: 300px 0 5px 0; */
+  color: lime;
+}
+
+.rabbit-image {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  /* Adjust size as needed */
+  height: auto;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.popup button {
+  padding: 5px 25px;
+
+  color: white;
+  border: none;
+  border-radius: 50px;
+  border: 2px solid lime;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.red-pill {
+  position: absolute;
+  left: 74px;
+  bottom: 84px;
+  background-color: red;
+}
+
+.red-pill:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.blue-pill:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+}
+
+.blue-pill {
+  position: absolute;
+  right: 104px;
+  bottom: 85px;
+  background-color: blue;
+}
+
+.discount-reveal {
+  color: lime;
+  font-size: 1.2em;
+  animation: fadeIn 0.5s ease-in;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* .popup button:hover {
+  background-color: lime;
+} */
+
+/* @media (max-width: 1000px) {
+
+  .red-pill {
+    position: absolute;
+    left: 20px;
+    bottom: 110px;
+    background-color: red;
+  }
+
+
+  .blue-pill {
+    position: absolute;
+    right: 40px;
+    bottom: 110px;
+    background-color: blue;
+  }
+
+  .popup h2 {
+    margin: 5px 30px 150px 30px;
+
+    padding-bottom: 100px;
+    color: lime;
+
+  }
+} */

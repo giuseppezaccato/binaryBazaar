@@ -1,0 +1,32 @@
+.scroll-top-btn {
+    position: fixed;
+    bottom: 80px;
+    /* Sopra il chatbot */
+    right: 20px;
+    /* Allineato al chatbot */
+    width: 50px;
+    height: 50px;
+    background-color: #32CD32;
+    /* Lime, per coerenza col tuo tema */
+    color: #000000;
+    /* Nero */
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    z-index: 900;
+    /* Sotto il chatbot (z-index: 1000) */
+}
+
+.scroll-top-btn:hover {
+    background-color: #28A428;
+    /* Lime più scuro */
+}
+
+.scroll-top-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

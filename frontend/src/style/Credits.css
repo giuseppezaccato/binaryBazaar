@@ -1,0 +1,104 @@
+.credits-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    perspective: 1000px;
+    line-height: 1.6;
+
+    h1 {
+        font-size: 4.5em;
+        /* Increased from 3.5em */
+        text-shadow: 0 0 15px #00ff00;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 3.5em;
+        /* Increased from 3em */
+        margin-bottom: 60px;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        font-size: 2.5em;
+        /* Added specific size */
+        color: #fff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #fff;
+    }
+
+    .names p {
+        font-size: 2em;
+        /* Increased from 1.2em */
+        margin: 15px 0;
+        letter-spacing: 1px;
+    }
+
+    .fact {
+        font-style: italic;
+        color: #aaa;
+        /* Lightened from #888 for better contrast */
+        margin: 30px 0;
+        font-size: 1.8em;
+        line-height: 1.4;
+    }
+
+    .final-message {
+        margin-top: 120px;
+        font-size: 2.2em;
+        /* Increased from 1.5em */
+        color: #ff0000;
+        text-shadow: 0 0 15px #ff0000;
+        letter-spacing: 2px;
+    }
+
+    /* Added for better text contrast */
+    * {
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.matrix-bg {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)),
+        url('/matrix-code.gif') repeat;
+}
+
+.credits-content {
+    padding: 40px;
+    text-align: center;
+    transform: translateY(20%);
+    /* Changed from 100% to start closer to view */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.credits-content.scrolling {
+    animation: scroll-up 50s linear forwards;
+    /* Increased from 35s to 45s for slower scroll */
+}
+
+@keyframes scroll-up {
+    from {
+        transform: translateY(20%) rotateX(10deg);
+        /* Reduced rotation angle */
+    }
+
+    to {
+        transform: translateY(-100%) rotateX(10deg);
+    }
+}
+
+.credit-item {
+    margin: 60px 0;
+    /* Increased spacing between items */
+}
+
+* {
+    transition: all 0.3s ease-out;
+}

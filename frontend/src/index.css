@@ -1,0 +1,1144 @@
+/* import matrix font */
+@import url('https://fonts.cdnfonts.com/css/share-techmono-2');
+
+a {
+    color: inherit;
+    /* Eredita il colore del testo dal genitore */
+    text-decoration: none !important;
+    /* Rimuove la sottolineatura */
+}
+
+a.nav-link.active {
+    color: lime !important;
+}
+
+a.visited {
+    text-decoration: none !important;
+}
+
+body {
+    font-family: 'Share-TechMono', sans-serif;
+}
+
+/* header------------------------ */
+.header {
+    width: 100%;
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid lime;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.cart-button {
+    position: relative;
+    background-color: transparent !important;
+    border: 2px solid lime !important;
+    color: black !important;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.cart-button:hover {
+    background-color: lime !important;
+    color: white !important;
+}
+
+.border-none {
+    border: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.cart-container {
+    margin-top: 40px;
+}
+
+.navbar {
+    background-color: rgb(168, 164, 164);
+    padding: 1rem;
+}
+
+
+.navbar-toggler {
+    border-color: lime;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 0, 0.25);
+}
+
+
+/* ----------------------------------- */
+
+.img-logo {
+    width: 300px;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    /* Rimuove la sottolineatura di default */
+    color: white;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 1.1rem;
+    margin: 40px 0;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    /* Distanza della sottolineatura dal testo */
+    width: 0;
+    height: 2px;
+    background-color: lime;
+    bottom: -10px;
+    transform: translateX(-50%);
+    /* Centra la linea rispetto al link */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: lime;
+    /* Cambia colore al passaggio del mouse */
+    transform: scale(1.2);
+    /* Ingrandisce leggermente */
+}
+
+.nav-link:hover::after {
+    width: 80%;
+
+
+}
+
+
+
+
+.main-box {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.titolo-nome {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+
+}
+
+h1 {
+    color: lime;
+}
+
+
+/* card del prodotto --------------------- */
+.box-card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-card {
+    position: relative;
+    width: 320px;
+    height: auto;
+    background: rgb(255, 255, 255);
+    border: 3px solid lime;
+    box-shadow: 0 4px 8px rgba(0, 255, 115, 0.6);
+    overflow: visible;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 80%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 15px;
+
+
+
+}
+
+.product-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+    height: 70px;
+    color: black;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.product-model {
+    font-size: 1em;
+    color: #333;
+    height: 50px;
+
+}
+
+.product-price {
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: black;
+    height: 40px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 8px;
+}
+
+.discount-price {
+    color: green;
+    font-weight: bold;
+}
+
+
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+
+.sconto {
+    position: absolute;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sconto::before {
+    content: 'Prezzo Shock!';
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background-image: linear-gradient(45deg, #8f502c 0%, #f32525 51%, #8f502c 100%);
+    transform: rotate(-45deg) translateY(-20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+
+
+
+/* Hero img sotto Header  */
+
+.hero-container {
+    width: 100%;
+    margin: 0 auto;
+    height: 40vh;
+    position: relative;
+}
+
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 40vh;
+    display: block;
+    object-fit: cover;
+    border-bottom: 3px solid lime;
+}
+
+
+.navigation-arrows {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 100px;
+}
+
+.arrow-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+
+.footer {
+    background-color: lightgrey;
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    padding-top: 20px;
+
+
+}
+
+
+/* SingleCard------------- */
+
+.product-details-container-single {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.product-grid-single {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+}
+
+.product-main-image-single {
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.product-title-single {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-rating-single {
+    color: #ffa41c;
+    margin-bottom: 10px;
+}
+
+.review-count-single {
+    color: #555;
+    margin-left: 10px;
+}
+
+.product-description-single {
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.product-features-single {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.price-container-single {
+    margin: 15px 0;
+}
+
+.product-price-single {
+    font-size: 24px;
+    color: #B12704;
+    font-weight: bold;
+}
+
+.original-price-single {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 10px;
+}
+
+.in-stock-single {
+    color: #007600;
+}
+
+.out-stock-single {
+    color: #B12704;
+}
+
+.purchase-actions-single {
+    margin: 20px 0;
+}
+
+.add-to-cart-btn {
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.buy-now-btn {
+    background-color: #ffa41c;
+    border: 1px solid #ff8f00;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.shipping-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.additional-details {
+    margin-top: 40px;
+}
+
+.product-specs {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-specs td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+
+
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+/* Search Bar Styles */
+
+.searchBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+}
+
+
+.searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #00ff11 100%, #00ff11 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+/*hover effect*/
+button:hover {
+    color: #99f2a9;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+
+}
+
+.hero-slogan {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.hero-slogan h2 {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+.product-list-container {
+    padding: 20px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Stile bottone carrello */
+.cart-button {
+    background: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    color: white !important;
+
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menu Hamburger */
+/* Rendi la checkbox invisibile */
+.menu-checkbox {
+    display: none;
+}
+
+
+/* Icona dell'hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Barra dell'hamburger */
+.bar {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Mobile Search (nascondi inizialmente) */
+.mobile-search {
+    display: none;
+}
+
+/* Stili per dispositivi mobili */
+@media (max-width: 1320px) {
+
+    /* Mostra l'icona dell'hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Nascondi la desktop search su mobile */
+    .desktop-search {
+        display: none;
+    }
+
+
+    /* Menu nascosto di default */
+    .nav-menu {
+        display: none;
+    }
+
+    /* Quando la checkbox è selezionata, mostra il menu */
+    .menu-checkbox:checked~.nav-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        z-index: 10;
+    }
+
+    /* Mostra la search bar mobile */
+    .mobile-search {
+        display: block;
+
+    }
+
+
+    /* Posizionamento corretto del carrello */
+    .cart-button {
+        position: relative;
+
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+@media (max-width: 667px) {
+    .mobile-search .searchBox {
+        width: 70%;
+    }
+
+}
+
+.color {
+    color: lime !important;
+}
+
+#viewModeSwitch {
+    border-color: lime;
+}
+
+.gift-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-icon {
+    color: lime;
+    animation: giftBounce 3s infinite;
+}
+
+@keyframes giftBounce {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.gift-link:hover .gift-icon {
+    animation: giftShake 0.5s infinite;
+}
+
+@keyframes giftShake {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+.animated-title {
+    font-size: 2em;
+    color: #333;
+}
+
+
+
+
+
+
+/* Contenitore principale */
+.product-list-container {
+    margin-left: 250px;
+    /* Spazio per la barra laterale */
+    padding: 20px;
+}
+
+/* Barra dei controlli a sinistra */
+.controls {
+    position: fixed;
+    /* Fissa a sinistra */
+    left: 0;
+    bottom: 0;
+    /* width: 250px; Larghezza fissa della barra */
+    height: 90vh;
+    /* Altezza piena */
+    background-color: rgb(33, 37, 41);
+    /* Sfondo chiaro */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Ombra a destra */
+    display: flex;
+    flex-direction: column;
+    /* Disposizione verticale */
+    gap: 20px;
+    /* Spaziatura tra gli elementi */
+    z-index: 10;
+    /* Sopra il contenuto */
+}
+
+/* Toggle della vista */
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Filtri */
+.filters {
+    display: flex;
+    flex-direction: column;
+    /* Verticale */
+    gap: 15px;
+}
+
+/* Stile per select, input e checkbox */
+.filters select,
+.filters input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background-color: black;
+    font-size: 14px;
+    width: 100%;
+    /* Occupa tutta la larghezza disponibile */
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus,
+.filters input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Checkbox dei prodotti scontati */
+.filters label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Risultati */
+.results-count {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Griglia prodotti */
+.products-grid {
+    padding: 20px;
+}
+
+/* Vista "single" */
+.products-grid.single {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Vista "row" */
+.products-grid.row {
+    display: block;
+}
+
+.products-grid.row ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products-grid.row ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.products-grid.row ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.products-grid.row ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Stile dello switch */
+.switch {
+    --switch-width: 46px;
+    --switch-height: 24px;
+    --switch-bg: rgb(131, 131, 131);
+    --switch-checked-bg: rgb(0, 218, 80);
+    --switch-offset: calc((var(--switch-height) - var(--circle-diameter)) / 2);
+    --switch-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    --circle-diameter: 18px;
+    --circle-bg: #fff;
+    --circle-shadow: 1px 1px 2px rgba(146, 146, 146, 0.45);
+    --circle-checked-shadow: -1px 1px 2px rgba(163, 163, 163, 0.45);
+    --circle-transition: var(--switch-transition);
+    --icon-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    --icon-cross-color: var(--switch-bg);
+    --icon-cross-size: 6px;
+    --icon-checkmark-color: var(--switch-checked-bg);
+    --icon-checkmark-size: 10px;
+    --effect-width: calc(var(--circle-diameter) / 2);
+    --effect-height: calc(var(--effect-width) / 2 - 1px);
+    --effect-bg: var(--circle-bg);
+    --effect-border-radius: 1px;
+    --effect-transition: all .2s ease-in-out;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+    display: inline-block;
+}
+
+.switch svg {
+    transition: var(--icon-transition);
+    position: absolute;
+    height: auto;
+}
+
+.switch .checkmark {
+    width: var(--icon-checkmark-size);
+    color: var(--icon-checkmark-color);
+    transform: scale(0);
+}
+
+.switch .cross {
+    width: var(--icon-cross-size);
+    color: var(--icon-cross-color);
+}
+
+.slider {
+    box-sizing: border-box;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    background: var(--switch-bg);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: var(--switch-transition);
+    cursor: pointer;
+}
+
+.circle {
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    background: var(--circle-bg);
+    border-radius: inherit;
+    box-shadow: var(--circle-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--circle-transition);
+    z-index: 1;
+    position: absolute;
+    left: var(--switch-offset);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: var(--effect-width);
+    height: var(--effect-height);
+    left: calc(var(--switch-offset) + (var(--effect-width) / 2));
+    background: var(--effect-bg);
+    border-radius: var(--effect-border-radius);
+    transition: var(--effect-transition);
+}
+
+.switch input:checked+.slider {
+    background: var(--switch-checked-bg);
+}
+
+.switch input:checked+.slider .checkmark {
+    transform: scale(1);
+}
+
+.switch input:checked+.slider .cross {
+    transform: scale(0);
+}
+
+.switch input:checked+.slider::before {
+    left: calc(100% - var(--effect-width) - (var(--effect-width) / 2) - var(--switch-offset));
+}
+
+.switch input:checked+.slider .circle {
+    left: calc(100% - var(--circle-diameter) - var(--switch-offset));
+    box-shadow: var(--circle-checked-shadow);
+}
+
+/* Media Query per schermi piccoli (sotto 768px) */
+@media (max-width: 768px) {
+    .product-list-container {
+        margin-left: 0;
+        /* Rimuovi margine sinistro */
+        padding: 10px;
+        /* Riduci padding */
+    }
+
+    .product-grid-single {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-main-image-single {
+        max-width: 350px;
+
+    }
+}
+
+/* WishList */
+/* Contenitore degli elementi della Wishlist */
+.wishlist-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* Permette alle card di andare a capo */
+    justify-content: center;
+    /* Centra le card orizzontalmente */
+    gap: 20px;
+    /* Spazio tra le card */
+}
+
+/* Singola card della Wishlist */
+.wishlist-card {
+    width: 50vw;
+    /* Larghezza al 50% della viewport */
+    margin-bottom: 20px;
+    border: 3px solid #333;
+    /* Bordo più spesso e scuro */
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Contenuto interno della card */
+.wishlist-card-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 600px;
+    /* Limita il contenuto interno per leggibilità */
+    margin: 0 auto;
+}
+
+/* Immagine del prodotto */
+.wishlist-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Informazioni del prodotto */
+.wishlist-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Stile per il nome del prodotto */
+.wishlist-item-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Stile per categoria e prezzo */
+.wishlist-item-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Prezzo */
+.wishlist-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Bottone di rimozione */
+.remove-wishlist-btn {
+    padding: 8px 15px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.remove-wishlist-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Responsive: adatta la card su schermi piccoli */
+@media (max-width: 768px) {
+    .wishlist-card {
+        width: 100%;
+        /* Torna a larghezza piena su mobile */
+        border: 2px solid #333;
+        /* Mantiene un bordo visibile ma più sottile */
+    }
+
+    .wishlist-card-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .wishlist-item-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .remove-wishlist-btn {
+        width: 100%;
+    }
+}
+
+/* Contenitore delle azioni nella card */
+.wishlist-actions {
+    display: flex;
+    flex-direction: column;
+    /* Impila i pulsanti verticalmente */
+    gap: 10px;
+    /* Spazio tra i pulsanti */
+}
+
+/* Stile per il bottone "Aggiungi al carrello" */
+.add-to-cart-btn {
+    padding: 8px 15px;
+    background-color: #28a745;
+    /* Verde, simile a "Procedi al Pagamento" */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+    /* Verde più scuro al passaggio del mouse */
+}
