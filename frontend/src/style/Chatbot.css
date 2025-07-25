@@ -17,6 +17,20 @@
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .chatbot-toggle:hover {
@@ -35,16 +49,30 @@
     flex-direction: column;
     opacity: 0;
     /* Inizia invisibile */
-    transform: translateY(20px);
+
     /* Inizia spostato verso il basso */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: none;
+    transform: translateY(100px) scale(0.5);
     /* Transizione per opacità e posizione */
 }
 
 /* Stato visibile (aggiunto dinamicamente via React) */
 .chatbot-window.open {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    animation: slideUpFade 0.4s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .chatbot-header {

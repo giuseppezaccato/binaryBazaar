@@ -11,7 +11,7 @@ import orderRouter from './routers/orderRouter.js'
 
 //cors
 app.use(cors({
-    origin: process.env.FRONTEND_PORT
+    origin: "*"
 }))
 
 //middleware body parse
