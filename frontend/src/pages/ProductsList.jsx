@@ -54,64 +54,6 @@ export default function ProductList() {
     return (
         <div className="container mt-4">
             <div className="row">
-                {/* Contenuto Principale */}
-                <div className="col-md-9">
-                    {/* Toggle Switch */}
-                    <div className="form-check form-switch mb-3">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="viewModeSwitch"
-                            checked={viewMode === 'row'}
-                            onChange={toggleViewMode}
-                        />
-                        <label className="form-check-label" htmlFor="viewModeSwitch">
-                            {viewMode === 'single' ? 'Griglia' : 'Lista'}
-                        </label>
-                    </div>
-
-                    {/* Conteggio Risultati */}
-                    <div className="mt-3 text-center">
-                        <p>Trovati {products.length} prodotti</p>
-                    </div>
-                    {/* Griglia Prodotti */}
-                    {viewMode === 'single' ? (
-                        <div className="row  row-cols-md-2 row-cols-lg-2 g-4">
-                            {products.map((p) => (
-                                <div className="col" key={p.slug}>
-                                    <Link to={`/products/${p.slug}`} className="text-decoration-none">
-                                        <Card product={p} />
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <ul className="list-group list-group-flush">
-                            {products.map((p) => (
-                                <li
-                                    key={p.slug}
-                                    className="list-group-item d-flex align-items-center "
-                                >
-                                    <Link
-                                        to={`/products/${p.slug}`}
-                                        className="d-flex align-items-center text-decoration-none text-dark"
-                                    >
-                                        <img
-                                            src={p.image_url}
-                                            alt={p.product_name} // Usa product_name
-                                            className="me-3"
-                                            style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                                        />
-                                        <span className='color'>{p.product_name}</span> {/* Usa product_name */}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-
-
-                </div>
-
                 {/* Sidebar Filtri */}
                 <div className="col-md-3">
                     <div className="card p-3">
@@ -192,6 +134,68 @@ export default function ProductList() {
                         </div>
                     </div>
                 </div>
+
+
+
+                {/* Contenuto Principale */}
+                <div className="col-md-9">
+                    {/* Toggle Switch */}
+                    <div className="form-check form-switch mb-3">
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            id="viewModeSwitch"
+                            checked={viewMode === 'row'}
+                            onChange={toggleViewMode}
+                        />
+                        <label className="form-check-label" htmlFor="viewModeSwitch">
+                            {viewMode === 'single' ? 'Griglia' : 'Lista'}
+                        </label>
+                    </div>
+
+                    {/* Conteggio Risultati */}
+                    <div className="mt-3 text-center">
+                        <p>Trovati {products.length} prodotti</p>
+                    </div>
+                    {/* Griglia Prodotti */}
+                    {viewMode === 'single' ? (
+                        <div className="row  row-cols-md-2 row-cols-lg-2 g-4">
+                            {products.map((p) => (
+                                <div className="col" key={p.slug}>
+                                    <Link to={`/products/${p.slug}`} className="text-decoration-none">
+                                        <Card product={p} />
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <ul className="list-group list-group-flush">
+                            {products.map((p) => (
+                                <li
+                                    key={p.slug}
+                                    className="list-group-item d-flex align-items-center "
+                                >
+                                    <Link
+                                        to={`/products/${p.slug}`}
+                                        className="d-flex align-items-center text-decoration-none text-dark"
+                                    >
+                                        <img
+                                            src={p.image_url}
+                                            alt={p.product_name} // Usa product_name
+                                            className="me-3"
+                                            style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                                        />
+                                        <span className='color'>{p.product_name}</span> {/* Usa product_name */}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+
+                </div>
+
+
             </div>
         </div>
     );
